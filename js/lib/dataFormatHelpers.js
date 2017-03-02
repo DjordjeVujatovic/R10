@@ -1,8 +1,13 @@
+
+
 export const formatDataObject = (data) => {
   const dataObject = Object.getOwnPropertyNames(data).map(index => data[index]);
   return dataObject[0];
 }
 
+export const convertToTime = (unixTime) => (
+  new Date(unixTime * 1000).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+)
 // Helper to format Firebase data into session listview data
 export const formatSessionData = (sessions) => {
   let dataBlob = {};

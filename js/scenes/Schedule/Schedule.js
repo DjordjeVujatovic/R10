@@ -3,7 +3,9 @@ import {
   View,
   Text,
   ListView,
+  TouchableHighlight
 } from 'react-native';
+import { goToSession } from '../../lib/navigationHelpers'
 
 function formatTimeStampToHours(timestamp) {
   const date = new Date(timestamp * 1000);
@@ -21,14 +23,16 @@ const Schedule = ({ data }) => {
        renderSectionHeader={(sectionData, startTime) =>
         <Text>{formatTimeStampToHours(startTime)}</Text>
        }
-       renderRow={data =>
+       renderRow={data => (
+       <TouchableHighlight onPress={() => goToSession('schedule', { data })}>
        <View>
         <Text>{data.title}</Text> 
         <Text>{data.location}</Text> 
        </View>
-      }
+       </TouchableHighlight>
+       )}
     />
-    );
+  );
 };
 
 export default Schedule;

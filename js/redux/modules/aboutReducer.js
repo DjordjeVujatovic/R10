@@ -9,9 +9,10 @@ export const setLoading = () => ({ type: SET_LOADING_FALSE, payload: null });
 
 export const getCodeOfConduct = (data) => ({ type: GET_CODE_OF_CONDUCT, payload: data });
 
-const endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
+
 
 //Redux Thunk
+const endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
 
 export const fetchCodeOfConduct = () => {
     return (dispatch) => {

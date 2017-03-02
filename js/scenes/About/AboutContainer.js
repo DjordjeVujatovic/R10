@@ -81,8 +81,7 @@ const mapStateToProps = state =>  ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    // setLoading: () => dispatch(setLoading()),
-    fetchCodeOfConduct: () => { dispatch(fetchCodeOfConduct()) },
+    fetchCodeOfConduct: () => dispatch(fetchCodeOfConduct()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AboutContainer);

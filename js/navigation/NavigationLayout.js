@@ -29,6 +29,7 @@ class NavigationLayout extends Component {
               <Text style={titleStyle}>{title}</Text>
         )
     }
+
     render() {
         return (
             <TabNavigation
