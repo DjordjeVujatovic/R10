@@ -15,8 +15,8 @@ export const typography = {
         ios: {
             fontMain: 'Montserrat',
             baseSize: 16,
-            mediumSize: 20,
-            largeSize: 24
+            mediumSize: 18,
+            largeSize: 28
         },
         android: {
             fontMain: 'Montserrat-Regular',

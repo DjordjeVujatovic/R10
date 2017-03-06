@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import LinearGradient from 'react-native-linear-gradient'
+import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView, View, Text, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import { convertToTime } from './../../lib/dataFormatHelpers'
-import { goToSpeaker } from '../../lib/navigationHelpers'
+import { convertToTime } from './../../lib/dataFormatHelpers';
+import { goToSpeaker } from '../../lib/navigationHelpers';
 import { typography, colors } from '../../config/styles';
-import { updateFave, deleteFave, getFaves } from '../../config/models'
-import styles from './styles'
+import { updateFave, deleteFave, getFaves } from '../../config/models';
+import styles from './styles';
 
 class Session extends Component {
   constructor() {
