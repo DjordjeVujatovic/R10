@@ -11,21 +11,22 @@ class SessionContainer extends Component {
         }
     }
     componentDidMount() {
-        const {sessionData} = this.props;
-        this.props.fetchSpeakers(sessionData.data.speaker);
+        this.props.fetchSpeakers(this.props.sessionData.data.speaker)
     }
 
     render() {
-        const {speakerData} = this.props
-        const {sessionData} = this.props
+        const speakerData = this.props.speakerData
+        const sessionData = this.props.sessionData
+
         return (
           <Session speakerData={speakerData} sessionData={sessionData}/>
+          
         );
     }
 }
 
 const mapStateToProps = state => ({
-    speakerData: state.speakers
+    speakerData: state.speakers.speakerData,
 })
 
 const mapDispatchToProps = dispatch => ({

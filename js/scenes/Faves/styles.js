@@ -1,7 +1,6 @@
-import {
-  StyleSheet,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { typography } from '../../config/styles';
+
 
 const styles = StyleSheet.create({
   timeContainer: {
@@ -15,17 +14,32 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: typography.fontMain,
     fontSize: typography.baseSize,
+    paddingLeft: 10,
+    paddingBottom: 5,
+    paddingTop: 5
+  },
+  locationContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent:'space-between',
+    paddingLeft: 10
+
   },
   location: {
     color: '#999999',
     fontSize: typography.baseSize,
-    fontFamily: typography.fontMain
+    fontFamily: typography.fontMain,
+    paddingBottom: 5
   },
   separator: {
     flex: 1,
     height: 1,
     backgroundColor: '#e6e6e6',
   },
+  heart: {
+    color:'red',
+    paddingRight: 10
+  }
 });
 
 export default styles;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AboutContainer from './scenes/About';
 import Router from './navigation/router';
-import { StatusBar } from 'react-native';
+import { StatusBar} from 'react-native';
 import { Provider }  from 'react-redux';
 
 import {
@@ -22,8 +22,8 @@ class R10 extends Component {
     return (
     <Provider store={Store}>
       <NavigationProvider context={navigationContext}>
-        <StatusBar barStyle='light-content' />
-        <StackNavigation initialRoute={Router.getRoute('layout')} />
+        <StatusBar barStyle='light-content'/>
+        <StackNavigation initialRoute={Router.getRoute('layout')} navigatorUID="root" />
       </NavigationProvider>
     </Provider>
     );

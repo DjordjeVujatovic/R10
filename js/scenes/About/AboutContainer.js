@@ -6,6 +6,7 @@ import { Text, View, Image, StyleSheet } from 'react-native';
 import Dimensions from 'Dimensions';
 import Conduct from '../../components/Conduct';
 import Realm from '../../config/models';
+import styles from './styles';
 
 class AboutContainer extends Component {
 
@@ -28,9 +29,9 @@ componentDidMount() {
            <Image source={require('../../assets/images/r10_logo.png')} />
         </View>
          <View style={styles.topTextContainer}>
-           <Text>R10 is a conference that focuses on just about any topic related to dev.</Text>
+           <Text style={styles.blurpText}>R10 is a conference that focuses on just about any topic related to dev.</Text>
            <Text style={styles.headers}>Date & Venue</Text>
-           <Text>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver,BC. </Text>
+           <Text style={styles.blurpText}>The R10 conference will take place on Tuesday, June 27, 2017 in Vancouver,BC. </Text>
          </View>
            <Text style={styles.headers}>Code of Conduct</Text>
              {aboutData.map((data, i) => (
@@ -46,34 +47,7 @@ componentDidMount() {
     }
   }
 
-const height = Dimensions.get('window').height;
-const width = Dimensions.get('window').width;
 
-const styles = StyleSheet.create({
-   container: {
-     padding: 12,
-     flex:1,
-     width: width
-   }, 
-   logoContainer: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'center',
-      height: 100,
-      paddingTop: 30,
-      borderBottomColor: '#e6e6e6',
-      borderBottomWidth: 2,
-    },
-    topTextContainer: {
-      paddingTop: 10,
-    },
-    headers: {
-      fontSize: 20,
-      paddingTop: 12,
-      paddingBottom: 12,
-      fontWeight: 'bold'
-    },
-});
 
 const mapStateToProps = state =>  ({
     aboutData: state.about.conductData,

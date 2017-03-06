@@ -1,5 +1,4 @@
-
-import { formatDataObject } from '../../lib/dataFormatHelpers'
+import { formatDataObject } from '../../lib/dataFormatHelpers';
 //Actions
 
 const GET_SPEAKERS = 'GET_SPEAKERS';
@@ -24,16 +23,17 @@ export const fetchSpeakers = (speakerId) => {
 
 //State
 
-const speakerInitialState = {}
+const speakerInitialState = {
+    speakerData: {}
+}
 
 export default (state = speakerInitialState, action) => {
     switch(action.type) {
         case GET_SPEAKERS:
-          return formatDataObject(action.payload)
+          const formattedData = formatDataObject(action.payload)
+          return {...state, speakerData: formattedData}
         default:
           return state
     }
 }
-
-//Session Reducer
 
