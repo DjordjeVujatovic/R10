@@ -12,26 +12,39 @@ import styles from './styles';
 class Session extends Component {
   constructor() {
     super();
+    toggleFave = this.toggleFave.bind(this);
+    setStateFaved = this.setStateFaved.bind(this);
     this.state = {
       faved: false,
       buttonText: 'Add to Faves',
       heartColor: 'white'
     }
   }
+  componentDidMount() {
+    this.setStateFaved(this.props.sessionData.data.session_id);
+  }
 
-  render() {
-    const toggleFave = (id) => {
-      this.setState({ faved: !this.state.faved });
-      if (this.state.faved) {
-        deleteFave(id)
-        this.setState({ buttonText: 'Add to Faves' })
-        this.setState({ heartColor: 'white' })
-      } else {
-        updateFave(id)
-        this.setState({ buttonText: 'Remove from Faves' })
-        this.setState({ heartColor: 'red' })
-      }
+  setStateFaved(id) {
+    if (getFaves(id) !== 0) {
+      this.setState({ faved: true });
+      this.setState({ buttonText: 'Remove from Faves' });
+      this.setState({ heartColor: 'red' });
     }
+  }
+
+  toggleFave(id) {
+    this.setState({ faved: !this.state.faved });
+    if (this.state.faved) {
+      deleteFave(id)
+      this.setState({ buttonText: 'Add to Faves' })
+      this.setState({ heartColor: 'white' })
+    } else {
+      updateFave(id)
+      this.setState({ buttonText: 'Remove from Faves' })
+      this.setState({ heartColor: 'red' })
+    }
+  }
+  render() {
 
     return (
       <ScrollView style={styles.container}>
@@ -53,7 +66,7 @@ class Session extends Component {
           </View>
         </TouchableOpacity>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => { toggleFave(this.props.sessionData.data.session_id) }}>
+          <TouchableOpacity onPress={(e) => { e.preventDefault(); toggleFave(this.props.sessionData.data.session_id) }}>
             <LinearGradient
               start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }}
               colors={[colors.purple, colors.blue]}
