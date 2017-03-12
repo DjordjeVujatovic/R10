@@ -12,14 +12,17 @@ import styles from './styles';
 class Session extends Component {
   constructor() {
     super();
+
     toggleFave = this.toggleFave.bind(this);
     setStateFaved = this.setStateFaved.bind(this);
+
     this.state = {
       faved: false,
       buttonText: 'Add to Faves',
       heartColor: 'white'
     }
   }
+
   componentDidMount() {
     this.setStateFaved(this.props.sessionData.data.session_id);
   }
@@ -44,6 +47,7 @@ class Session extends Component {
       this.setState({ heartColor: 'red' })
     }
   }
+
   render() {
 
     return (

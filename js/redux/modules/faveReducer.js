@@ -1,4 +1,4 @@
-import { queryFaves } from '../../config/models';
+import { getFaves } from '../../config/models';
 import { formatSessionData } from '../../lib/dataFormatHelpers';
 
 //Action
@@ -12,7 +12,7 @@ export const fetchFaves = () => {
         fetch(endpoint)
         .then((response) => response.json())
         .then((result) =>{
-            const queryFave = queryFaves()
+            const queryFave = getFaves()
             const filterFaves = result.filter(fave => queryFave.indexOf(fave.session_id) >= 0)
             dispatch(postFaves(filterFaves));
         })

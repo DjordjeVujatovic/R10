@@ -34,7 +34,7 @@ class NavigationLayout extends Component {
                 initialItem="about-tab"
                 drawerWidth={300}
                 renderIcon={this.renderIcon('md-information-circler')}
-                >
+            >
                 <DrawerNavigationItem
                     id="about-tab"
                     title="About"
