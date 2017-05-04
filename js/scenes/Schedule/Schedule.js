@@ -18,9 +18,9 @@ const Schedule = ({ data }) => {
       }
       renderRow={data => (
         <TouchableHighlight onPress={() => goToSession('schedule', { data })}>
-          <View style = {styles.titleContainer}>
-            <Text style = {styles.title}>{data.title}</Text>
-            <Text style = {styles.location}>{data.location}</Text>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{data.title}</Text>
+            <Text style={styles.location}>{data.location}</Text>
           </View>
         </TouchableHighlight>
       )}

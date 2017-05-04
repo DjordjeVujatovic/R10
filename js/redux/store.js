@@ -1,7 +1,7 @@
 import { createNavigationEnabledStore } from '@exponent/ex-navigation';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers'; 
+import rootReducer from './reducers';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // definitely enable Redux dev tools!

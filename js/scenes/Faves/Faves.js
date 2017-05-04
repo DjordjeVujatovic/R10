@@ -13,7 +13,7 @@ import { timeHelper } from '../../lib/timeHelper';
 import { goToSession } from '../../lib/navigationHelpers';
 import styles from './styles'
 
-const Faves = ({data}) => {
+const Faves = ({ data }) => {
   return (
     <ListView
       dataSource={data}
@@ -29,17 +29,17 @@ const Faves = ({data}) => {
               <View style={styles.locationContainer}>
                 <Text style={styles.location}>{data.location}</Text>
                 {Platform.OS === 'ios' &&
-                  <Icon name='ios-heart' size={16} style={styles.heart}/>
+                  <Icon name='ios-heart' size={16} style={styles.heart} />
                 }
                 {Platform.Version === 23 &&
-                  <Icon name='md-heart' size={16} style={styles.heart}/>
+                  <Icon name='md-heart' size={16} style={styles.heart} />
                 }
               </View>
             </View>
           </TouchableOpacity>
         </View>
       }
-      renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator}/>} 
+      renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
     />
   )
 }

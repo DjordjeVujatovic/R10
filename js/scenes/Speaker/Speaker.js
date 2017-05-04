@@ -5,7 +5,7 @@ import { typography, colors } from '../../config/styles';
 
 const wikiLink = (url) => Linking.openURL(url);
 
-const Speaker = ({speakerData}) => {
+const Speaker = ({ speakerData }) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.interior}>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     paddingTop: 20
   },
   button: {
-    height:70,
+    height: 70,
     width: 260,
     borderRadius: 70,
 

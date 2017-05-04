@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import AboutContainer from './scenes/About';
 import Router from './navigation/router';
-import { StatusBar} from 'react-native';
-import { Provider }  from 'react-redux';
+import { StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
 
 import {
   NavigationProvider,
@@ -20,12 +20,12 @@ const navigationContext = new NavigationContext({
 class R10 extends Component {
   render() {
     return (
-    <Provider store={Store}>
-      <NavigationProvider context={navigationContext}>
-        <StatusBar barStyle='light-content'/>
-        <StackNavigation initialRoute={Router.getRoute('layout')} navigatorUID="root" />
-      </NavigationProvider>
-    </Provider>
+      <Provider store={Store}>
+        <NavigationProvider context={navigationContext}>
+          <StatusBar barStyle='light-content' />
+          <StackNavigation initialRoute={Router.getRoute('layout')} navigatorUID="root" />
+        </NavigationProvider>
+      </Provider>
     );
   }
 }

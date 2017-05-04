@@ -22,8 +22,8 @@ class FavesContainer extends Component {
     }
 }
 const dataSource = new ListView.DataSource({
-  rowHasChanged: (r1, r2) => r1 !== r2,
-  sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
+    rowHasChanged: (r1, r2) => r1 !== r2,
+    sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
 })
 
 const mapStateToProps = (state) => ({

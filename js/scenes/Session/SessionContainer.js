@@ -19,8 +19,8 @@ class SessionContainer extends Component {
         const sessionData = this.props.sessionData
 
         return (
-          <Session speakerData={speakerData} sessionData={sessionData}/>
-          
+            <Session speakerData={speakerData} sessionData={sessionData} />
+
         );
     }
 }
