@@ -9,7 +9,7 @@ const Faves = {
   }
 };
 
-const realm = new Realm({ schema: [Faves] });
+export const realm = new Realm({ schema: [Faves] });
 
 //Get Faves
 export const getFaves = () => {

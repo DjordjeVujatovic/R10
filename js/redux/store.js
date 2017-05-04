@@ -11,7 +11,6 @@ const createStoreWithNavigation = createNavigationEnabledStore({
 }); // as per the ExNavigation docs...
 const store = createStoreWithNavigation(
   rootReducer,
-  {}, // initial state
   composeEnhancers(
     applyMiddleware(thunk)
   ) // enhancers

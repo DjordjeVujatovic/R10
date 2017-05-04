@@ -10,7 +10,6 @@ export const getSchedule = (data) => ({ type: GET_SCHEDULE, payload: data });
 
 //Redux Thunk
 const endpoint = 'https://r10app-95fea.firebaseio.com/sessions.json';
-console.log(endpoint)
 export const fetchSchedule = () => {
     return (dispatch) => {
         fetch(endpoint)
