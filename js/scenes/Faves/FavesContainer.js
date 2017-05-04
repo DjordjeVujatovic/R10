@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView, DataSource } from 'react-native';
-import { fetchFaves } from '../../redux/modules/faveReducer';
+import { fetchSchedule } from '../../redux/modules/scheduleReducer';
 import Faves from './Faves';
 
 
@@ -13,27 +13,29 @@ class FavesContainer extends Component {
         }
     }
     componentDidMount() {
-        this.props.fetchFaves();
+        this.props.fetchSchedule();
     }
     render() {
         return (
-            <Faves data={this.props.favesData} />
+            <Faves data={this.props.dataSource} />
         );
     }
 }
-const dataSource = new ListView.DataSource({
+const ds = new ListView.DataSource({
     rowHasChanged: (r1, r2) => r1 !== r2,
     sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
 })
 
-const mapStateToProps = (state) => ({
-    favesData: dataSource.cloneWithRowsAndSections(
-        state.faves.sessionData.dataBlob,
-        state.faves.sessionData.sectionIds,
-        state.faves.sessionData.rowIds
-    ),
-});
+const mapStateToProps = (state) => {
+    return {
+        dataSource: ds.cloneWithRowsAndSections(
+            state.schedule.sessionData.dataBlob,
+            state.schedule.sessionData.sectionIds,
+            state.schedule.sessionData.rowIds
+        ),
+    };
+};
 const mapDispatchToProps = dispatch => ({
-    fetchFaves: () => { dispatch(fetchFaves()) },
+    fetchSchedule: () => { dispatch(fetchSchedule()) },
 });
 export default connect(mapStateToProps, mapDispatchToProps)(FavesContainer);

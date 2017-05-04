@@ -1,11 +1,8 @@
 //Actions
 
 const GET_CODE_OF_CONDUCT = 'GET_CODE_OF_CONDUCT';
-const SET_LOADING_FALSE = 'SET_LOADING_FALSE';
 
 //Action Creator
-
-export const setLoadingFalse = () => ({ type: SET_LOADING_FALSE, payload: null });
 
 export const getCodeOfConduct = (data) => ({ type: GET_CODE_OF_CONDUCT, payload: data });
 
@@ -29,15 +26,12 @@ export const fetchCodeOfConduct = () => {
 //State
 const aboutPageInitialState = {
     conductData: [],
-    isLoading: true,
 };
 
 //About Reducer
 
 export default (state = aboutPageInitialState, action) => {
     switch (action.type) {
-        case SET_LOADING_FALSE:
-            return { ...state, isLoading: false };
         case GET_CODE_OF_CONDUCT:
             return { ...state, conductData: action.payload };
         default:
